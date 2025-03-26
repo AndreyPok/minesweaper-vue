@@ -1,9 +1,9 @@
 <template>
-  <div :class="{ disabled: isDisabled }">
+  <div :class="{ disabled: isDisabled }" class="board">
     <div
       class="minefield"
       :style="{
-        gridTemplateColumns: `repeat(${width}, 50px)`,
+        gridTemplateColumns: `repeat(${width}, ${cellSize}px)`,
       }"
       @mousedown="handleMouse"
       @contextmenu.prevent
@@ -19,6 +19,9 @@
           issue: cell.isIssue,
         }"
         :data-index="index"
+        :style="{
+          height: `${cellSize}px`,
+        }"
       >
         <span v-if="cell.isOpen && cell.isMine">💣</span>
         <span v-if="cell.isOpen && !cell.isMine">{{
@@ -32,12 +35,15 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from "vue"
+
+const props = defineProps({
   isDisabled: Boolean,
   width: Number,
   field: Array,
   handleMouse: Function,
 })
+const cellSize = computed(() => (props.width <= 8 ? 50 : 30))
 </script>
 
 <style scoped>
@@ -55,8 +61,6 @@ defineProps({
 }
 
 .cell {
-  height: 50px;
-  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;

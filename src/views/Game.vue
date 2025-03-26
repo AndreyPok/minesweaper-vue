@@ -42,23 +42,24 @@ export default {
 
 <style scoped>
 .game {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+  max-height: 100%;
+  display: grid;
+  place-items: center; /* Центрирует game-container */
   background-color: #1e1e1e; /* Тёмный фон для контраста */
+  box-sizing: border-box;
 }
 
 .game-container {
-  width: max-content;
   display: flex;
-  flex-direction: column; /* Размещение элементов по вертикали */
-  align-items: center; /* Центрирование по горизонтали */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #2c3e50;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 </style>

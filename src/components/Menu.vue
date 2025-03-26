@@ -38,14 +38,14 @@ defineProps({
   flex-direction: column;
   align-items: center;
   background-color: #2d3e50;
+  height: 300px;
   width: 100%;
-  max-width: 350px;
+  max-width: 60vw;
   padding: 20px;
   border-radius: 15px;
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень */
   margin-bottom: 20px;
-  height: auto;
   text-align: center;
 }
 
