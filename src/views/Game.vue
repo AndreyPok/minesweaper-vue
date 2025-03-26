@@ -42,12 +42,13 @@ export default {
 
 <style scoped>
 .game {
-  min-height: 100vh;
-  max-height: 100%;
+  height: 100vh;
+  min-height: max-content;
   display: grid;
   place-items: center; /* Центрирует game-container */
-  background-color: #1e1e1e; /* Тёмный фон для контраста */
+  background-color: #1e1e1e; /* Тёмный фон для контраста продублировал в html*/
   box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 .game-container {

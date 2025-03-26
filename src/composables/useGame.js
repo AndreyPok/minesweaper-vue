@@ -24,11 +24,8 @@ export function useGame() {
   function getRecords() {
     const saveRecords = localStorage.getItem(selectedLevel.value.name)
 
-    console.log(saveRecords)
-
     if (saveRecords) {
       records.value = JSON.parse(saveRecords)
-      console.log("Обновил рекорды: ", records.value)
     } else {
       records.value = []
     }

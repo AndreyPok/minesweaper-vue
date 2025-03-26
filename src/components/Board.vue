@@ -47,6 +47,9 @@ const cellSize = computed(() => (props.width <= 8 ? 50 : 30))
 </script>
 
 <style scoped>
+.board {
+  box-sizing: border-box;
+}
 .disabled {
   pointer-events: none;
   opacity: 0.5;

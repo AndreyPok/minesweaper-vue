@@ -39,14 +39,16 @@ defineProps({
   align-items: center;
   background-color: #2d3e50;
   height: 250px;
+  min-width: 400px;
   width: 100%;
-  max-width: 60vw;
+  max-width: 80%;
   padding: 20px;
   border-radius: 15px;
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень */
   margin-bottom: 20px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .option {
@@ -88,8 +90,8 @@ button:active {
 
 .timer,
 .mines-counter {
-  width: 90px; /* Умеренный размер */
-  height: 45px; /* Умеренная высота */
+  min-width: 90px; /* Умеренный размер */
+  min-height: 45px; /* Умеренная высота */
   background-color: #444;
   display: flex;
   align-items: center;
