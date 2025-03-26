@@ -38,7 +38,7 @@ defineProps({
   flex-direction: column;
   align-items: center;
   background-color: #2d3e50;
-  height: 300px;
+  height: 250px;
   width: 100%;
   max-width: 60vw;
   padding: 20px;
@@ -50,7 +50,6 @@ defineProps({
 }
 
 .option {
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

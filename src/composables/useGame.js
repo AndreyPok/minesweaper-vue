@@ -14,17 +14,25 @@ export function useGame() {
   onMounted(() => {
     setMines()
     countMines()
+    getRecords()
 
     const modalElement = document.getElementById("winModal")
 
     if (modalElement) winModal.value = new Modal(modalElement)
+  })
 
+  function getRecords() {
     const saveRecords = localStorage.getItem(selectedLevel.value.name)
+
+    console.log(saveRecords)
 
     if (saveRecords) {
       records.value = JSON.parse(saveRecords)
+      console.log("Обновил рекорды: ", records.value)
+    } else {
+      records.value = []
     }
-  })
+  }
 
   const levels = [
     { name: "Простой", size: "8x8", mines: 10 },
@@ -36,6 +44,7 @@ export function useGame() {
 
   function changeLevel(index) {
     selectedLevel.value = levels[index]
+    getRecords()
     restartGame()
   }
 
@@ -190,8 +199,6 @@ export function useGame() {
     })
 
     if (field[index].surroundingMines !== countFlagged) return
-
-    console.log(field[index].surroundingMines, countFlagged)
 
     neighbors.forEach((i) => {
       if (field[i].isOpen) return
